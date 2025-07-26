@@ -1,40 +1,43 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const menuItems = [
   {
-    title: "MENU",
+    title: "MENÜ",
     items: [
       {
         icon: "/home.png",
-        label: "Home",
+        label: "Ana Panel",
         href: "/",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/teacher.png",
-        label: "Teachers",
+        label: "Öğretmenler",
         href: "/list/teachers",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/student.png",
-        label: "Students",
+        label: "Öğrenciler",
         href: "/list/students",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/parent.png",
-        label: "Parents",
+        label: "Veliler",
         href: "/list/parents",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/subject.png",
-        label: "Subjects",
+        label: "Dersler",
         href: "/list/subjects",
         visible: ["admin"],
       },
       {
         icon: "/class.png",
-        label: "Classes",
+        label: "Sınıflar",
         href: "/list/classes",
         visible: ["admin", "teacher"],
       },
@@ -46,43 +49,43 @@ const menuItems = [
       },
       {
         icon: "/exam.png",
-        label: "Exams",
+        label: "Sınavlar",
         href: "/list/exams",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/assignment.png",
-        label: "Assignments",
+        label: "Ödevler",
         href: "/list/assignments",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/result.png",
-        label: "Results",
+        label: "Sonuçlar",
         href: "/list/results",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/attendance.png",
-        label: "Attendance",
+        label: "Yoklama",
         href: "/list/attendance",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/calendar.png",
-        label: "Events",
+        label: "Etkinlik",
         href: "/list/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/message.png",
-        label: "Messages",
+        label: "Mesajlar",
         href: "/list/messages",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/announcement.png",
-        label: "Announcements",
+        label: "Duyurular",
         href: "/list/announcements",
         visible: ["admin", "teacher", "student", "parent"],
       },
@@ -93,22 +96,42 @@ const menuItems = [
     items: [
       {
         icon: "/profile.png",
-        label: "Profile",
+        label: "Profil",
         href: "/profile",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/setting.png",
-        label: "Settings",
+        label: "Ayarlar",
         href: "/settings",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
         icon: "/logout.png",
-        label: "Logout",
+        label: "Çıkış",
         href: "/logout",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],
   },
 ];
+
+const Menu = () => {
+  return (
+    <div className="mt-4 text-sm">
+      {menuItems.map(i=>(
+        <div className="flex flex-col gap-2" key={i.title}>
+          <span className="hidden lg:block text-gray-400 font-light my-4">{i.title}</span>
+          {i.items.map(item=>(
+            <Link href={item.href} key={item.label} className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 ">
+            <Image src={item.icon} alt="" width={20} height={20} />
+            <span className="hidden lg:block">{item.label}</span>
+            </Link>
+          ))}
+        </div>
+      ))}
+      </div>
+  );
+};
+
+export default Menu
