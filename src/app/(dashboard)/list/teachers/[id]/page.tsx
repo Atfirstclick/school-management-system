@@ -40,11 +40,41 @@ const SingleTeacherPage = () => {
             <span>user@gmail.com</span>
         </div>
     </div>
-    {/* Other details go here */}
   </div>
 </div>
          {/* SMALL CARDS */}
-        <div className="flex-1"></div>
+        <div className="flex-1 flex gap-4 justify-between flex-wrap">
+          {/* CARD */}
+          <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">            <Image src="/singleAttendance.png" alt='' width={24} height={24} className="w-6 h-6"/>
+         <div className="">
+          <h1 text-xl font-semibold >%90</h1>
+          <span className="text-sm text-gray-400">Devam Oranı</span>
+         </div>
+         </div>
+         {/* CARD */}
+          <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+            <Image src="/singleBranch.png" alt='' width={24} height={24} className="w-6 h-6"/>
+         <div className="">
+          <h1 text-xl font-semibold >2</h1>
+          <span className="text-sm text-gray-400">Şube</span>
+         </div>
+         </div>
+          {/* CARD */}
+          <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+          <Image src="/singleLesson.png" alt='' width={24} height={24} className="w-6 h-6"/>
+         <div className="">
+          <h1 text-xl font-semibold >6</h1>
+          <span className="text-sm text-gray-400">Aylık Ders</span>
+         </div>
+         </div>
+        {/* CARD */}
+          <div className="bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">            <Image src="/singleClass.png" alt='' width={24} height={24} className="w-6 h-6"/>
+         <div className="">
+          <h1 text-xl font-semibold >6</h1>
+          <span className="text-sm text-gray-400">Sınıf</span>
+         </div>
+         </div>
+        </div>
         </div>
         {/* BOTTOM */}
         <div className="">Öğretmen Programı</div>
