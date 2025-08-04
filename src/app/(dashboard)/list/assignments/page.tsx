@@ -35,7 +35,7 @@ const renderRow = (item:Assignment) => (
     <td>
       <div className="flex items-center gap-2">
         <Link href={`/list/assignments/${item.id}`}>
-        <button className="w-7 h-7  flex items-center justify-center rounded-full bg-KmlSky" title="Görüntüle">
+        <button className="w-7 h-7  flex items-center justify-center rounded-full bg-KmlSky" title="Düzenle">
           <Image src="/edit.png" alt="" width={17} height={17} />
           </button>
         </Link>
