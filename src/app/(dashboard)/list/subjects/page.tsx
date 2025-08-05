@@ -6,7 +6,7 @@ import { role, subjectsData,} from "@/lib/data"
 import Image from "next/image"
 import Link from "next/link"
 
-type Subject = {
+type Ders = {
   id:number;
   name:string;
   teachers:string[];
@@ -21,7 +21,7 @@ const columns = [
 
 const SubjectListPage = () => {
 
-const renderRow = (item:Subject) => (
+const renderRow = (item:Ders) => (
   <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-KmlPurpleLight">
     <td className="flex items-center gap-4 p-4">
         {item.name}
@@ -36,8 +36,8 @@ const renderRow = (item:Subject) => (
         </Link> */}
         {role === "admin" && (
           <>
-          <FormModal table="subject" type="update" data={item}/>  
-          <FormModal table="subject" type="delete" id={item.id}/>  
+          <FormModal table="ders" type="update" data={item}/>  
+          <FormModal table="ders" type="delete" id={item.id}/>  
           </> 
         )}
       </div>
@@ -63,7 +63,7 @@ const renderRow = (item:Subject) => (
             //   <button className="w-8 h-8 flex items-center justify-center rounded-full bg-KmlYellow">
             // <Image src="/plus.png" alt="" width={14} height={14} />
             // </button>
-           <FormModal table="subject" type="create"/>  
+           <FormModal table="ders" type="create"/>  
           )}
           </div>
         </div>
