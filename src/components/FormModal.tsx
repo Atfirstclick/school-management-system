@@ -1,11 +1,41 @@
 "use client"
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
-import TeacherForm from "./forms/TeacherForm";
+// import TeacherForm from "./forms/TeacherForm";
+// import StudentForm from "./forms/StudentForm";
+
+const TeacherForm = dynamic(()=>import("./forms/TeacherForm"), {
+  loading: ()=>
+  <h1>Loading...</h1>,
+});
+
+const StudentForm = dynamic(()=>import("./forms/StudentForm"), {
+  loading: ()=>
+  <h1>Loading...</h1>,
+});
+
+
+const forms:{[key:string]: (type:"create" | "update", data?: any) =>JSX.Element;
+}={
+  öğretmen: (type,data) => <TeacherForm type={type} data={data}/>,
+  öğrenci: (type,data) => <StudentForm type={type} data={data}/>,
+
+};
 
 const FormModal = ({table, type, data, id}: {
-table: "teacher" | "student" | "lesson" | "class" | "ders" | "assignment" | "exam" | "event" | "announcement" | "result" | "parent";
+table:  | "öğretmen" 
+        | "öğrenci" 
+        | "lesson" 
+        | "class" 
+        | "ders" 
+        | "assignment" 
+        | "exam" 
+        | "event" 
+        | "announcement" 
+        | "result" 
+        | "parent";
 type: "create" | "update" | "delete";
 data?: any;
 id?: number;
@@ -21,8 +51,10 @@ id?: number;
       <span className="text-center font-medium">Tüm veriler silinecektir. Bu {table} kaydını silmek istediğinizden emin misiniz?</span>
       <button className="bg-red-700 text-white py-2 px-4 rounded-md border-none w-max self-center">Sil</button>
     </form> 
+  ) : type === "create" || type === "update" ? (
+    forms [table] (type,data)
   ) : (
-    <TeacherForm type="update" data={data} />
+    "Form bulunamadı!"
   );
 };
 
