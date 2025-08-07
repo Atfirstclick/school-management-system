@@ -16,17 +16,24 @@ const StudentForm = dynamic(()=>import("./forms/StudentForm"), {
   <h1>Loading...</h1>,
 });
 
+const ParentForm = dynamic(()=>import("./forms/ParentForm"), {
+  loading: ()=>
+  <h1>Loading...</h1>,
+});
+
 
 const forms:{[key:string]: (type:"create" | "update", data?: any) =>JSX.Element;
 }={
   öğretmen: (type,data) => <TeacherForm type={type} data={data}/>,
   öğrenci: (type,data) => <StudentForm type={type} data={data}/>,
+  veli: (type,data) => <ParentForm type={type} data={data}/>,
 
 };
 
 const FormModal = ({table, type, data, id}: {
 table:  | "öğretmen" 
         | "öğrenci" 
+        | "veli"
         | "lesson" 
         | "class" 
         | "ders" 
@@ -35,7 +42,7 @@ table:  | "öğretmen"
         | "event" 
         | "announcement" 
         | "result" 
-        | "parent";
+
 type: "create" | "update" | "delete";
 data?: any;
 id?: number;

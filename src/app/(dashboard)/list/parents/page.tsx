@@ -50,8 +50,8 @@ const renderRow = (item:Parent) => (
           // <Image src="/delete.png" alt="" width={16} height={16} />
           // </button>
           <>
-        <FormModal table="parent" type="update" data={item}/>
-        <FormModal table="parent" type="delete" id={item.id}/>  
+        <FormModal table="veli" type="update" data={item}/>
+        <FormModal table="veli" type="delete" id={item.id}/>  
         </>
         )}
       </div>
@@ -78,7 +78,7 @@ const renderRow = (item:Parent) => (
             // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-KmlYellow">
             // <Image src="/plus.png" alt="" width={14} height={14} />
             // </button>
-            <FormModal table="parent" type="create"/>
+            <FormModal table="veli" type="create"/>
 
             )}
           </div>
