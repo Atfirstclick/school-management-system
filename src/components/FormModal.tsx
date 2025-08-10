@@ -18,8 +18,11 @@ const StudentForm = dynamic(()=>import("./forms/StudentForm"), {
 
 const ParentForm = dynamic(()=>import("./forms/ParentForm"), {
   loading: ()=>
-  <h1>Loading...</h1>,
-});
+  <h1>Loading...</h1>,});
+  const LessonForm = dynamic(()=>import("./forms/LessonForm"), {
+  loading: ()=>
+  <h1>Loading...</h1>});
+
 
 
 const forms:{[key:string]: (type:"create" | "update", data?: any) =>JSX.Element;
@@ -27,6 +30,8 @@ const forms:{[key:string]: (type:"create" | "update", data?: any) =>JSX.Element;
   öğretmen: (type,data) => <TeacherForm type={type} data={data}/>,
   öğrenci: (type,data) => <StudentForm type={type} data={data}/>,
   veli: (type,data) => <ParentForm type={type} data={data}/>,
+  lesson: (type,data) => <LessonForm type={type} data={data}/>,
+
 
 };
 
