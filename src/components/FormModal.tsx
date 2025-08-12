@@ -19,7 +19,8 @@ const StudentForm = dynamic(()=>import("./forms/StudentForm"), {
 const ParentForm = dynamic(()=>import("./forms/ParentForm"), {
   loading: ()=>
   <h1>Loading...</h1>,});
-  const LessonForm = dynamic(()=>import("./forms/LessonForm"), {
+
+const LessonForm = dynamic(()=>import("./forms/LessonForm"), {
   loading: ()=>
   <h1>Loading...</h1>});
 

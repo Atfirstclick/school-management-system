@@ -48,7 +48,7 @@ const onSubmit = handleSubmit((data) => {
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-        <h1 className="text-xl font-semibold">Yeni Veli Kaydı Oluştur</h1>
+        <h1 className="text-xl font-semibold">Yeni Lesson Kaydı Oluştur</h1>
         <span className="text-xs text-gray-400 font-medium">
             Doğrulama Bilgileri
             </span>
