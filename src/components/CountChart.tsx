@@ -11,12 +11,12 @@ const data = [
   {
     name: 'Kızlar',
     count: 1000,
-    fill: '#c3ebfa',
+    fill: '#ea0313',
   },
   {
     name: 'Erkekler',
     count: 1000,
-    fill: '#fae27c',
+    fill: '#0b3554',
   },
   
 ];
@@ -52,13 +52,13 @@ const CountChart = () => {
         {/* BOTTOM */}
         <div className='flex justify-center gap-16'>
            <div className='flex flex-col gap-1'>
-            <div className='w-5 h-5 bg-KmlSky rounded-full'>
+            <div className='w-5 h-5 rounded-full' style={{backgroundColor: '#0b3554'}}>
             </div>
             <h1 className='font-bold'>1000</h1>
             <h2 className='text-xs text-gray-300'>Erkek (%50)</h2>
             </div> 
              <div className='flex flex-col gap-1'>
-            <div className='w-5 h-5 bg-KmlYellow rounded-full'>
+            <div className='w-5 h-5 rounded-full' style={{backgroundColor: '#ea0313'}}>
             </div>
             <h1 className='font-bold'>1000</h1>
             <h2 className='text-xs text-gray-300'>Kız (%50)</h2>
