@@ -46,7 +46,7 @@ const messages = {
   Thu: 'Perşembe',
   Fri: 'Cuma',
   Sat: 'Cumartesi',
-  showMore: (total) => `+${total} daha`
+  showMore: (total: number) => `+${total} daha`
 };
 
 const BigCalendar = () => {
