@@ -66,6 +66,12 @@ const menuItems = [
         href: "/list/results",
         visible: ["admin", "teacher", "student", "parent"],
       },
+            {
+        icon: "/result.png",
+        label: "Test Sonuçları",
+        href: "/list/tests",
+        visible: ["admin"],
+      },
       {
         icon: "/attendance.png",
         label: "Yoklama",
