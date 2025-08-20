@@ -8,7 +8,7 @@ const menuItems = [
     items: [
       {
         icon: "/home.png",
-        label: "Ana Panel",
+        label: "Anasayfa",
         href: "/",
         visible: ["admin", "teacher", "student", "parent"],
       },
