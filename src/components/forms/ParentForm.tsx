@@ -20,7 +20,9 @@ const schema = z.object({
   bloodType:z.string().min(1, {message:"Kan grubu gereklidir!"}),
   birthday:z.date({message:"Doğum tarihi gereklidir!"}),
   sex: z.enum(["erkek", "kadın"], {message: "Cinsiyet bilgisi gereklidir!"}),
-  img:z.instanceof(File, {message:"Fotoğraf gereklidir!"})
+  img:z.instanceof(File, {message:"Fotoğraf gereklidir!"}),
+  studentId: z.string().min(1, { message: "Öğrenci seçiniz!" }),
+
 
 });
 

@@ -16,7 +16,7 @@ const menuItems = [
         icon: "/teacher.png",
         label: "Öğretmenler",
         href: "/list/teachers",
-        visible: ["admin",],
+        visible: ["admin"],
       },
       {
         icon: "/student.png",
@@ -43,10 +43,22 @@ const menuItems = [
         visible: ["admin", "teacher"],
       },
       {
-        icon: "/lesson.png",
-        label: "Lessons",
-        href: "/list/lessons",
-        visible: ["admin", "teacher"],
+        icon: "/calendar.png",
+        label: "Bire Bir Etüt",
+        href: "/list/events",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+         {
+        icon: "/attendance.png",
+        label: "Yoklama",
+        href: "/list/attendance",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+            {
+        icon: "/result.png",
+        label: "Test Sonuçları",
+        href: "/list/tests",
+        visible: ["admin"],
       },
       {
         icon: "/exam.png",
@@ -64,24 +76,6 @@ const menuItems = [
         icon: "/result.png",
         label: "Sonuçlar",
         href: "/list/results",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-            {
-        icon: "/result.png",
-        label: "Test Sonuçları",
-        href: "/list/tests",
-        visible: ["admin"],
-      },
-      {
-        icon: "/attendance.png",
-        label: "Yoklama",
-        href: "/list/attendance",
-        visible: ["admin", "teacher", "student", "parent"],
-      },
-      {
-        icon: "/calendar.png",
-        label: "Etkinlik",
-        href: "/list/events",
         visible: ["admin", "teacher", "student", "parent"],
       },
       {
